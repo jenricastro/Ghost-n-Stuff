@@ -5,27 +5,11 @@ const creaturesSchema = require('./models/beasts.js');
 const userContoller = require('./controllers/user_controller.js')
 const session = require('express-session')
 const methodOverride = require('method-override');
-
-// const sessionsController = require('./controllers/sessions_controller.js')
 const app = express();
-// app.use('/users', userContoller);
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended: true}));
-// require('dotenv').config();
-// const PORT = process.env.PORT
-// const mongodbURI = process.env.MONGODBURI
-// app.use('/sessions', sessionsController)
-app.use(express.static('public'));
+app.use(express.static(__dirname+'/public'));
 
-
-// app.use(
-//     session({
-//       secret: process.env.SECRET, //a random string do not copy this value or your stuff will get hacked
-//       resave: false, // default more info: https://www.npmjs.com/package/express-session#resave
-//       saveUninitialized: false // default  more info: https://www.npmjs.com/package/express-session#resave
-//     })
-//   )
-  
 
 // Creatures.create(creaturesSchema, (err, data)=>{
 //         if(err) console.log(err.message)
@@ -33,17 +17,23 @@ app.use(express.static('public'));
 //     });
 
 
-
-
 // Get
+
+app.get('/', (req, res)=>{
+    res.render('loading.ejs')
+})
 
 app.get('/create', (req, res)=>{
     res.render('create.ejs')
 })
 
-app.get('/', (req, res)=>{
-    res.render('./public/loading.ejs')
+app.get('/map', (req, res)=>{
+    Creatures.find({}, (err, map)=>{
+        res.render('map.ejs', {
+            creature: map
 })
+});
+});
 
 app.get('/sightings', (req, res)=>{
     Creatures.find({}, (err, allCreatures)=>{

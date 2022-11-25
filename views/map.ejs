@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- W3 Modal -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+    *{
+            margin: 0 auto;
+            background-color: rgb(6, 5, 5);
+        }
+        body{
+            background-color: rgb(16, 14, 14);
+            min-width: 500px;
+            margin: 0;
+        }
+     
+    .sideBar {
+      position: fixed;  
+      height: 100%;
+      width: 0;
+      background-color: #111;
+      z-index: 1;
+      transition: .06s;
+      padding-top: 50px;
+      opacity: .5;
+      overflow-x: hidden;
+    }
+    
+    .sideBar a {
+      text-decoration: none;  
+      padding: 10px 10px 10px 30px;
+      font-size: 35px;
+      color: #279fb2;
+      display: block;
+      transition: .06s;
+    }
+    
+    .sideBar a:hover {
+      color: #f1f1f1;
+    }
+    
+    .sideBar .closebtn {
+      position: absolute;
+      top: 0;
+      margin-left: 50px;
+      right: 35px;
+      font-size: 45px;
+    }
+    /* @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    } */
+
+    /* Map */
+    .map-container{
+            width: 85%;
+            min-width: 500px;
+            margin: auto;
+            position: relative;
+        }
+
+        .map-container img{
+            width: 100%;
+            height: 100%;
+        }
+    
+    /* Modal */
+.pulsebtn1 {
+position: absolute;
+bottom: 400px;
+left: 700px;
+opacity: 0.7;
+animation: glowing 1300ms infinite;
+}
+
+.w3-container1{
+color: white;
+}
+
+.pulsebtn1 {
+border-radius: 60px;
+border: none;
+color: #090505;
+cursor: pointer;
+font-size: 20px;
+padding: 2px;
+text-decoration: none;
+}
+    @keyframes glowing {
+    0% {
+        background-color: #2ba805;
+        box-shadow: 0 0 5px #2ba805;
+    }
+    50% {
+        background-color: #49e819;
+        box-shadow: 0 0 60px #49e819;
+    }
+    100% {
+        background-color: #2ba805;
+        box-shadow: 0 0 5px #2ba805;
+    }
+}
+.pulsebtn2 {
+position: absolute;
+bottom: 380px;
+left: 520px;
+opacity: 0.5;
+animation: glow2 1300ms infinite;
+}
+
+.w3-container1{
+color: white;
+}
+
+.pulsebtn2 {
+border-radius: 60px;
+border: none;
+color: #000000;
+cursor: pointer;
+font-size: 20px;
+padding: 2px;
+text-decoration: none;
+}
+    @keyframes glow2 {
+        0% {
+        background-color: #dde039;
+        box-shadow: 0 0 5px #dde039;
+    }
+    50% {
+        background-color: #dde039;
+        box-shadow: 0 0 60px #dde039;
+    }
+    100% {
+        background-color: #dde039;
+        box-shadow: 0 0 5px #dde039;
+    }
+}
+
+.pulsebtn3 {
+position: absolute;
+bottom: 600px;
+left: 400px;
+opacity: 0.5;
+animation: glow3 1300ms infinite;
+}
+
+.w3-container1{
+color: white;
+}
+
+.pulsebtn3 {
+border-radius: 60px;
+border: none;
+color: #000000;
+cursor: pointer;
+font-size: 20px;
+padding: 2px;
+text-decoration: none;
+}
+    @keyframes glow3 {
+        0% {
+        background-color: #2ba805;
+        box-shadow: 0 0 5px #2ba805;
+    }
+    50% {
+        background-color: #49e819;
+        box-shadow: 0 0 60px #49e819;
+    }
+    100% {
+        background-color: #2ba805;
+        box-shadow: 0 0 5px #2ba805;
+    }
+}
+
+.pulsebtn4 {
+position: absolute;
+bottom: 300px;
+right: 460px;
+opacity: 0.5;
+animation: glow4 1300ms infinite;
+}
+
+.w3-container1{
+color: white;
+}
+
+.pulsebtn4 {
+border-radius: 60px;
+border: none;
+color: #000000;
+cursor: pointer;
+font-size: 20px;
+padding: 2px;
+text-decoration: none;
+}
+    @keyframes glow4 {
+        0% {
+        background-color: #2ba805;
+        box-shadow: 0 0 5px #2ba805;
+    }
+    50% {
+        background-color: #49e819;
+        box-shadow: 0 0 60px #49e819;
+    }
+    100% {
+        background-color: #2ba805;
+        box-shadow: 0 0 5px #2ba805;
+    }
+}
+
+.pulsebtn5 {
+position: absolute;
+bottom: 500px;
+right: 900px;
+opacity: 0.5;
+animation: glow5 1300ms infinite;
+}
+
+.w3-container1{
+color: white;
+}
+
+.pulsebtn5 {
+border-radius: 60px;
+border: none;
+color: #000000;
+cursor: pointer;
+font-size: 20px;
+padding: 2px;
+text-decoration: none;
+}
+    @keyframes glow5 {
+    0% {
+        background-color: #dde039;
+        box-shadow: 0 0 5px #dde039;
+    }
+    50% {
+        background-color: #dde039;
+        box-shadow: 0 0 60px #dde039;
+    }
+    100% {
+        background-color: #dde039;
+        box-shadow: 0 0 5px #dde039;
+    }
+}
+
+.pulsebtn6 {
+position: absolute;
+bottom: 230px;
+left: 600px;
+opacity: 0.6;
+animation: glow6 1300ms infinite;
+}
+
+.w3-container1{
+color: white;
+}
+
+.pulsebtn6 {
+border-radius: 60px;
+border: none;
+color: #090707;
+cursor: pointer;
+font-size: 20px;
+padding: 2px;
+text-decoration: none;
+}
+    @keyframes glow6 {
+    0% {
+        background-color: #fcf232;
+        box-shadow: 0 0 5px #fcf232;
+    }
+    50% {
+        background-color: #fc3232;
+        box-shadow: 0 0 60px #fc3232;
+    }
+    100% {
+        background-color: #fcf232;
+        box-shadow: 0 0 5px #fcf232;
+    }
+}
+
+.pulsebtn7 {
+position: absolute;
+bottom: 100px;
+right: 400px;
+opacity: 0.5;
+animation: glow7 1300ms infinite;
+}
+
+.w3-container1{
+color: white;
+}
+
+.pulsebtn7 {
+border-radius: 60px;
+border: none;
+color: #000000;
+cursor: pointer;
+font-size: 20px;
+padding: 2px;
+text-decoration: none;
+}
+    @keyframes glow7 {
+    0% {
+        background-color: #dde039;
+        box-shadow: 0 0 5px #dde039;
+    }
+    50% {
+        background-color: #dde039;
+        box-shadow: 0 0 60px #dde039;
+    }
+    100% {
+        background-color: #dde039;
+        box-shadow: 0 0 5px #dde039;
+    }
+}
+
+.pulsebtn8 {
+position: absolute;
+bottom: 200px;
+right: 800px;
+opacity: 0.5;
+animation: glow8 1300ms infinite;
+}
+
+.w3-container1{
+color: white;
+border: 4px solid rgb(39, 187, 228);
+}
+
+.pulsebtn8 {
+border-radius: 60px;
+border: none;
+color: #000000;
+cursor: pointer;
+font-size: 20px;
+padding: 2px;
+text-decoration: none;
+}
+    @keyframes glow8 {
+        0% {
+        background-color: #2ba805;
+        box-shadow: 0 0 5px #2ba805;
+    }
+    50% {
+        background-color: #49e819;
+        box-shadow: 0 0 60px #49e819;
+    }
+    100% {
+        background-color: #2ba805;
+        box-shadow: 0 0 5px #2ba805;
+    }
+}
+    </style>
+    </head>
+    <body>
+        <!-- nav -->
+    <div id="navBar" class="sideBar">
+      <a href="#" class="closebtn" onclick="closeBtn()">&times;</a>
+      <a href="/sightings">Home</a>
+      <a href="/create">Create</a>
+      <a href="">Records</a>
+      <a href="/" style="font-size:40px; color:red;">LogOut</a>
+    </div>
+    <span style="font-size:50px; color:aqua; cursor: progress;" onclick="openBtn()">&#9776;</span>
+
+        <!-- body/map -->
+    <div class="map-container">
+        <img src="/images/mapW.jpeg" >
+    </div>
+
+        <!-- modals/buttons -->
+        <!-- #1 -->
+    <div class="pulsebtn1" style="border-radius:50%">
+        <button onclick="openModal()" class="w3-button" style="border-radius:50%">1⚠</button>
+        <div id="modal" class="w3-modal">
+          <div class="w3-modal-content">
+            <div class="w3-container1">
+              <span onclick="closeModal()" class="w3-button w3-display-topright">&times;</span>
+              <p><%= creature[1].name %> </p>
+              <img src="/images/lochness.jpeg" alt="Notebook" style="width:100%;">
+                <div class="content">
+                    <h1>Heading</h1>
+                    <p>Lorem ipsum..</p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>  
+
+        <!-- #2 -->
+      <div class="pulsebtn2" style="border-radius:50%">
+        <button onclick="openModal2()" class="w3-button" style="border-radius:50%">2⚠</button>
+        <div id="modal2" class="w3-modal">
+          <div class="w3-modal-content">
+            <div class="w3-container1">
+              <span onclick="closeModal2()" class="w3-button w3-display-topright">&times;</span>
+              <p><%= creature[2].name %> </p>
+              <img src="/images/lochness.jpeg" alt="Notebook" style="width:100%;">
+                <div class="content">
+                    <h1>Heading</h1>
+                    <p>Lorem ipsum..</p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+        <!-- #3 -->
+      <div class="pulsebtn3" style="border-radius:50%">
+        <button onclick="openModal3()" class="w3-button" style="border-radius:50%">3⚠</button>
+        <div id="modal3" class="w3-modal">
+          <div class="w3-modal-content">
+            <div class="w3-container1">
+              <span onclick="closeModal3()" class="w3-button w3-display-topright">&times;</span>
+              <p><%= creature[3].name %> </p>
+              <img src="/images/lochness.jpeg" alt="Notebook" style="width:100%;">
+                <div class="content">
+                    <h1>Heading</h1>
+                    <p>Lorem ipsum..</p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <!-- #4 -->
+        <div class="pulsebtn4" style="border-radius:50%">
+            <button onclick="openModal4()" class="w3-button" style="border-radius:50%">4⚠</button>
+            <div id="modal4" class="w3-modal">
+              <div class="w3-modal-content">
+                <div class="w3-container1">
+                  <span onclick="closeModal4()" class="w3-button w3-display-topright">&times;</span>
+                  <p><%= creature[4].name %> </p>
+                  <img src="/images/lochness.jpeg" alt="Notebook" style="width:100%;">
+                    <div class="content">
+                        <h1>Heading</h1>
+                        <p>Lorem ipsum..</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <!-- #5 -->
+      <div class="pulsebtn5" style="border-radius:50%">
+        <button onclick="openModal5()" class="w3-button" style="border-radius:50%">5⚠</button>
+        <div id="modal5" class="w3-modal">
+          <div class="w3-modal-content">
+            <div class="w3-container1">
+              <span onclick="closeModal5()" class="w3-button w3-display-topright">&times;</span>
+              <p><%= creature[5].name %> </p>
+              <img src="/images/lochness.jpeg" alt="Notebook" style="width:100%;">
+                <div class="content">
+                    <h1>Heading</h1>
+                    <p>Lorem ipsum..</p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <!-- #6 -->
+      <div class="pulsebtn6" style="border-radius:50%">
+        <button onclick="openModal6()" class="w3-button" style="border-radius:50%">6⚠</button>
+        <div id="modal6" class="w3-modal">
+          <div class="w3-modal-content">
+            <div class="w3-container1">
+              <span onclick="closeModal6()" class="w3-button w3-display-topright">&times;</span>
+              <p><%= creature[6].name %> </p>
+              <img src="/images/lochness.jpeg" alt="Notebook" style="width:100%;">
+                <div class="content">
+                    <h1>Heading</h1>
+                    <p>Lorem ipsum..</p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- #7 -->
+      <div class="pulsebtn7" style="border-radius:50%">
+        <button onclick="openModal7()" class="w3-button" style="border-radius:50%">7⚠</button>
+        <div id="modal7" class="w3-modal">
+          <div class="w3-modal-content">
+            <div class="w3-container1">
+              <span onclick="closeModal7()" class="w3-button w3-display-topright">&times;</span>
+              <p><%= creature[7].name %> </p>
+              <img src="/images/lochness.jpeg" alt="Notebook" style="width:100%;">
+                <div class="content">
+                    <h1>Heading</h1>
+                    <p>Lorem ipsum..</p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pulsebtn8" style="border-radius:50%">
+        <button onclick="openModal8()" class="w3-button" style="border-radius:50%">8⚠</button>
+        <div id="modal8" class="w3-modal">
+          <div class="w3-modal-content">
+            <div class="w3-container1">
+              <span onclick="closeModal8()" class="w3-button w3-display-topright">&times;</span>
+              <p><%= creature[8].name %> </p>
+              <img src="/images/lochness.jpeg" alt="Notebook" style="width:100%;">
+                <div class="content">
+                    <h1>Heading</h1>
+                    <p>Lorem ipsum..</p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    <script>
+    // NavBar
+    function openBtn() {
+        document.getElementById("navBar").style.width = "250px";
+    }
+    function closeBtn() {
+        document.getElementById("navBar").style.width = "0";
+    }
+    
+    // Modals
+    // #1
+    function openModal(){
+        document.getElementById('modal').style.display='block'
+    }
+    function closeModal(){
+        document.getElementById('modal').style.display='none'
+    }
+    //#2
+    function openModal2(){
+        document.getElementById('modal2').style.display='block'
+    }
+    function closeModal2(){
+        document.getElementById('modal2').style.display='none'
+    }
+    //#3
+    function openModal3(){
+        document.getElementById('modal3').style.display='block'
+    }
+    function closeModal3(){
+        document.getElementById('modal3').style.display='none'
+    }
+    //#4
+    function openModal4(){
+        document.getElementById('modal4').style.display='block'
+    }
+    function closeModal4(){
+        document.getElementById('modal4').style.display='none'
+    }
+    //#5
+    function openModal5(){
+        document.getElementById('modal5').style.display='block'
+    }
+    function closeModal5(){
+        document.getElementById('modal5').style.display='none'
+    }
+    //#6
+    function openModal6(){
+        document.getElementById('modal6').style.display='block'
+    }
+    function closeModal6(){
+        document.getElementById('modal6').style.display='none'
+    }
+    //#7
+    function openModal7(){
+        document.getElementById('modal7').style.display='block'
+    }
+    function closeModal7(){
+        document.getElementById('modal7').style.display='none'
+    }
+    //#8
+    function openModal8(){
+        document.getElementById('modal8').style.display='block'
+    }
+    function closeModal8(){
+        document.getElementById('modal8').style.display='none'
+    }
+    </script>
+       
+    </body>
