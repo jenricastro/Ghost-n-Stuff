@@ -4,14 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <title>Display Creature</title>
 </head>
 <body>
-    <a href="/sightings">home</a>
+    <%- include ('./partials/navbar.ejs') %>
     <div class="container">
-        <h1>Creature</h1>
-        <%=  creature.name%> 
-        <img src=<%= creature.img %> width="50px" hight="50px">
+        <div class="col-lg-8 cold-md-8 col-sm-8">
+            <figure>
+                <h2><%= creature.name %> </h2>
+                <img src="/images/dragon.jpeg" alt="images">
+                <!-- //overlay wors better for bootstrap -->
+                <div class="overlay">
+                    <div class="info">
+                        <p><%= creature.location %> </p><br/>
+                        <p><%= creature.kind %> </p><br/>
+                        <p><%= creature.description %> </p>
+                    </div>
+                </div>
+            </figure>
+        </div>
     </div>
 </body>
 </html>

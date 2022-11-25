@@ -9,9 +9,9 @@
     <title>Document</title>
 </head>
 <body>
-
+<%- include ('./partials/navbar.ejs') %> 
     <a href="/create">create</a>
-   <h1>test</h1>
+<h1>test</h1>
    
    <% for (let i = 0; i< creatures.length; i++){ %> 
          <img src=<%= creatures[i].img %>>

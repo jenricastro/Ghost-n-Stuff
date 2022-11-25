@@ -1,17 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <title>Display Creature</title>
 </head>
 <body>
-    <a href="/sightings">home</a>
-    <h1>edit</h1>
-    <form action="/sightings/<%= creature.id %>/?_methods=PUT " method="POST">
-        <%=  creature.name%> 
-    </form>
-
+    <%- include ('./partials/navbar.ejs') %>
+    <div class="container">
+        <div class="col-lg-8 cold-md-8 col-sm-8">
+            <figure>
+                <h2><%= creature.name %> </h2>
+                <img src="/images/dragon.jpeg" alt="images">
+                
+                <div class="overlay">
+                    <div class="info">
+                        <form action="/lot/<%=creature.id%>?_method=PUT" method="POST">
+                            Location:<input type="text" name="location" value="<%= creature.location %>"><br/>
+                            Kind:<input type="text" name="kind" value="<%= creature.kind %>"><br/>
+                            Description:<input type="text" name="description" value="<%= creature.description%>"><br/>
+                        </form>
+                    </div>
+                </div>
+            </figure>
+        </div>
+    </div>
 </body>
 </html>

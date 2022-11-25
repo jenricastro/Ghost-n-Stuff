@@ -31,16 +31,14 @@ app.get('/map', (req, res)=>{
     Creatures.find({}, (err, map)=>{
         res.render('map.ejs', {
             creature: map
-})
-});
+        })
+    });
 });
 
 app.get('/sightings', (req, res)=>{
     Creatures.find({}, (err, allCreatures)=>{
         res.render('sightings.ejs', {
             creatures: allCreatures
-            
-          
         });
     });
 });

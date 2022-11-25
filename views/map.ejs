@@ -356,8 +356,41 @@ text-decoration: none;
         background-color: #2ba805;
         box-shadow: 0 0 5px #2ba805;
     }
+
+  }
+.ticker{
+ height: 50px;	
+ overflow: hidden;
+ position: relative;
+ background: rgb(228, 45, 45);
+ color: rgb(216, 154, 38);
+ border: 3px solid rgb(2, 151, 139);
+ width: 80%;
+ margin-top: -50px;
 }
-    </style>
+.ticker p {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ line-height: 50px;
+ text-align: center;
+ /* Starting position */
+ transform:translateX(100%);
+ /* Apply animation to this element */
+ animation: ticker 15s linear infinite;
+}
+/* Move it (define the animation) */
+@keyframes ticker {
+ 0%   {
+ transform: translateX(100%); 		
+ }
+ 100% {
+ transform: translateX(-100%); 
+ }
+}
+</style>
+
     </head>
     <body>
         <!-- nav -->
@@ -369,6 +402,11 @@ text-decoration: none;
       <a href="/" style="font-size:40px; color:red;">LogOut</a>
     </div>
     <span style="font-size:50px; color:aqua; cursor: progress;" onclick="openBtn()">&#9776;</span>
+
+    <!-- News Ticker -->
+    <div class="ticker">
+      <p>Alert! Brazil's Containment Facility has been Breach, Depolying Group Delta || Warning Sectors 2, 5 & 7 are Under Severe Weather Conditions. Creature's Containment Raised to level 5</p>
+    </div>
 
         <!-- body/map -->
     <div class="map-container">
