@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="/style.css">
     <title>Display Creature</title>
 </head>
-<body>
+<body style="background-color: rgb(37, 36, 36);">
     <%- include ('./partials/navbar.ejs') %>
-    <div class="container">
-        <div class="col-lg-8 cold-md-8 col-sm-8">
+    <div id="show-main">
+    <div class="container" >
+        <div>
             <figure>
-                <h2><%= creature.name %> </h2>
-                <img src="/images/dragon.jpeg" alt="images">
+                <h2 style="color: rgb(255, 255, 255);"><%= creature.name %> </h2>
+                <img src="/images/dragon.jpeg" alt="images" style="border: 10px solid rgb(33, 125, 161);">
                 <!-- //overlay wors better for bootstrap -->
                 <div class="overlay">
                     <div class="info">
@@ -26,5 +27,7 @@
             </figure>
         </div>
     </div>
+    </div>
+    
 </body>
 </html>

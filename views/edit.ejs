@@ -6,26 +6,52 @@
     <link rel="stylesheet" href="/style.css">
     <title>Display Creature</title>
 </head>
-<body>
+    <body style="background-color: rgb(37, 36, 36);">
     <%- include ('./partials/navbar.ejs') %>
-    
+
     <div class="container">
-        <div class="col-lg-8 cold-md-8 col-sm-8">
+        <div>
             <figure>
                 <h2><%= creature.name %> </h2>
                 <img src="/images/dragon.jpeg" alt="images">
                 
                 <div class="overlay">
                     <div class="info">
-                        <form action="/lot/<%=creature.id%>?_method=PUT" method="POST">
-                            Location:<input type="text" name="location" value="<%= creature.location %>"><br/>
-                            Kind:<input type="text" name="kind" value="<%= creature.kind %>"><br/>
-                            Description:<input type="text" name="description" value="<%= creature.description%>"><br/>
-                        </form>
+                        <div class="container" style="text-align: left;">
+                            <form action="/sightings/<%=creature.id%>?_method=PUT" method="POST" method="POST">
+                                <div class="form-group">
+                                    <label for="location">Country</label>
+                                    <input type="text" name="location" id="location" placeholder="Where was it seen ..">
+                                </div>
+                                <div class="form-group">
+                                    <label for="environment">Environment</label>
+                                    <input type="text" name="environment" id="environment" placeholder="Prefered habit..">
+                                </div>
+                                <div class="form-group">
+                                    <label for="kind">Kind</label>
+                                    <select multiple class="form-control" name="kind" id="kind">
+                                        <option>Ghost</option>
+                                        <option>Spirit</option>
+                                        <option>Fairy</option>
+                                        <option>Alpha</option>
+                                        <option>Creature</option>
+                                        <option>Primordial</option>
+                                        <option>Unknown</option>
+                                        <option></option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <textarea name="description" class="form-control" id="description" cols="5" rows="5"></textarea>
+                                </div>
+                                <div>
+                                    <input type="submit" value="Update Archive" class="btn btn-warning">
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                </div>
-            </figure>
+                </figure>
+            </div>
         </div>
-    </div>
-</body>
+    </body>
 </html>
