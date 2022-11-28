@@ -10,7 +10,7 @@ app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(__dirname+'/public'));
 
-
+// 
 // Creatures.create(creaturesSchema, (err, data)=>{
 //         if(err) console.log(err.message)
 //         console.log('creature DB created')
