@@ -3,9 +3,16 @@ const { users } = require('moongose/models');
 
 
 const userSChema = new mongoose.Schema({
+    firstName:{
+        type:String,
+        unique: true
+    },
+    lastName:{
+        type:String,
+        unique:true
+    },
     username: {
         type: String,
-        required: true,
         unique: true
     },
     password: String

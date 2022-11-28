@@ -1,6 +1,7 @@
 const express = require ('express');
 const mongoose = require('mongoose');
 const Creatures = require('./models/ceatures.js');
+const User = require('./models/users.js')
 const creaturesSchema = require('./models/beasts.js');
 const userContoller = require('./controllers/user_controller.js')
 const session = require('express-session')
@@ -21,6 +22,10 @@ app.use(express.static(__dirname+'/public'));
 
 app.get('/', (req, res)=>{
     res.render('loading.ejs')
+})
+
+app.get('/register', (req, res)=>{
+    res.render('registration.ejs')
 })
 
 app.get('/create', (req, res)=>{
@@ -81,6 +86,15 @@ app.post('/sightings', (req, res)=>{
     });
 });
 
+// app.post('/register', (req, res)=>{
+//     User.create(req.body), (err, userData)=>{
+//         res.redirect('/sightings', {
+//             user: userData
+//         })
+//     }
+// });
+
+
 app.put('/sightings/:id', (req, res)=>{
     Creatures.findByIdAndUpdate(req.params.id, req.body, (err, update)=>{
         res.redirect('/sightings')
@@ -89,7 +103,7 @@ app.put('/sightings/:id', (req, res)=>{
 
 app.delete('/sightings/:id', (req, res)=>{
     Creatures.findByIdAndDelete(req.params.id, (err, data)=>{
-        res.redirect('/sightings')
+        res.redirect('/track')
     })
 })
 
@@ -102,6 +116,11 @@ mongoose.connect('mongodb://localhost:27017/creatures', () => {
 Creatures.countDocuments({}, (err, data) => {
     if (err) console.log(err.message)
     console.log(`There are ${data} creatures in this database`)
+})
+
+User.countDocuments({}, (err, data) => {
+    if (err) console.log(err.message)
+    console.log(`There are ${data} users in this database`)
 })
 
 app.listen(3000, ()=>{
