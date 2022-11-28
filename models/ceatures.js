@@ -17,6 +17,9 @@ const creaturesSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please add a creature description'],
     },
+    environment:{
+        type: String
+    },
     hostile: Boolean,
     img: String
 })

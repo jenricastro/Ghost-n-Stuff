@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(54, 54, 54);">
+    <%- include ('./partials/navbar.ejs') %> 
+    <div class="container" style="background-color: rgb(164, 161, 161); margin-top: 50px;">
+        <h1>Tracking DataBase</h1>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Brand</th>
+                    <th>Location</th>
+                    <th>Environment</th>
+                    <th>Kind</th>
+                    <th>Hostile</th>
+                    <th></th>
+                    <th>Action</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for (let i=0; i< creatures.length; i++){%> 
+                <tr>
+                    <td><%=creatures[i].name %></td>
+                    <td><%=creatures[i].location %></td>
+                    <td></td>
+                    <td><%=creatures[i].kind %></td>
+                    <td><%=creatures[i].hostile %></td>
+
+                    <td><a href="/sightings/<%= creatures[i].id %>/display" class="btn btn-warning btn-sm">Display</a></td>
+                    <td><a href="/sightings/<%= creatures[i].id %>/edit" class="btn btn-primary btn-sm">Edit</a></td>
+                    <td>
+                        <form action="/sightings/<%= creatures[i].id%>?_method=DELETE" method="POST">
+                            <input type="submit" value="Delete" class="btn btn-danger btn-sm">
+                        </form>
+                    </td>
+                </tr>
+                <% } %> 
+            </tbody>
+        </table>
+    </div>
+    
+    
+</body>
+</html>

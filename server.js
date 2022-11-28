@@ -13,7 +13,7 @@ app.use(express.static(__dirname+'/public'));
 
 // Creatures.create(creaturesSchema, (err, data)=>{
 //         if(err) console.log(err.message)
-//         console.log('Dealership DB created')
+//         console.log('creature DB created')
 //     });
 
 
@@ -26,6 +26,14 @@ app.get('/', (req, res)=>{
 app.get('/create', (req, res)=>{
     res.render('create.ejs')
 })
+
+app.get('/track', (req, res)=>{
+    Creatures.find({}, (err, track)=>{
+        res.render('track.ejs', {
+            creatures: track
+        })
+    });
+});
 
 app.get('/map', (req, res)=>{
     Creatures.find({}, (err, map)=>{

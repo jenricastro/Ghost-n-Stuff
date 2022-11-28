@@ -1,6 +1,4 @@
-body{
-    background-color: black;
-}
+
 .container{
     margin-top: 100px;
     margin-left: 200px;
@@ -57,4 +55,47 @@ figure:hover h2{
 figure:hover .overlay {
     display: block;
     height: 100%;
+}
+
+/* Sightings */
+*.container {
+margin: 0 auto;
+}
+        
+.ticker{
+    height: 50px;	
+    overflow: hidden;
+    position: relative;
+    background: rgb(228, 45, 45);
+    color: gold;
+    border: 3px solid rgb(2, 151, 139);
+    width: 100%;
+    margin-top: 10px;
+}
+.ticker p {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    line-height: 50px;
+    text-align: center;
+    /* Starting position */
+    transform:translateX(100%);
+    /* Apply animation to this element */
+    animation: ticker 15s linear infinite;
+}
+/* Move it (define the animation) */
+@keyframes ticker {
+    0%   {
+    transform: translateX(100%); 		
+    }
+    100% {
+    transform: translateX(-100%); 
+    }
+}
+ h5{
+    color: red;
+ }
+img{
+    height: 500px;
 }
